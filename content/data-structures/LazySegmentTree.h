@@ -3,7 +3,7 @@
  * Date: 2024-03-03
  * License: ???
  * Source: folklore
- * Description: Segment Tree con Lazy Propagation.
+ * Description: Segment Tree with Lazy Propagation.
  * Usage: 0-indexed. Need to define node_t and lazy_t constructors that take
 base_t, and operations to add (combine).
  * Status: Tested
