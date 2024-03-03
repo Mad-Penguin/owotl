@@ -1,6 +1,6 @@
 /**
  * Author: Diego Garcia
- * Date: 2024-03-23
+ * Date: 2024-03-03
  * License: ???
  * Source: folklore
  * Description: Segment Tree con Lazy Propagation.
