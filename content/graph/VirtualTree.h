@@ -5,7 +5,7 @@
  * Description: 1-indexed. vT is the adjacency list of the virtual tree, vT\_nodes its nodes with root vT\_root. Uses the same labels as the original tree.
  * Usage: 
  * build(). Is not necessary to manually call clearVT.
- * Time: $O(k)$ to build VT of $k$ nodes
+ * Time: $O(k \log N)$ to build VT of $k$ nodes
  * Status: Tested
  */
 constexpr int LOG = 19; // n <= 2e5
