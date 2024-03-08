@@ -3,8 +3,7 @@
  * Date: 2015-02-24
  * License: CC0
  * Source: e-maxx
- * Description: Maximum matching minimum cost
- * Usage: 1-indexed. For non complete bipartite graph add edges (u, v) with cost inf. For Maximum matching maximum cost multiply the weights by -1. Matching $(u, v)$ is stored in M. Make sure $n=$ rows $\leq$ columns $=m$.
+ * Description: Maximum matching minimum cost. 1-indexed. For non complete bipartite graph add edges (u, v) with cost inf. For Maximum matching maximum cost multiply the weights by -1. Matching $(u, v)$ is stored in M. Make sure $n=$ rows $\leq$ columns $=m$.
  * Time: $O(n^3)$ --O(n^2 m) for non-square matrix--
  * Status: Tested
  */
