@@ -8,6 +8,7 @@
  * SuffixAutomaton sa(sz(s));
  * for(auto ch: s) sa.add(ch);
  * sa.markTerminalNodes()
+* Time: $O(N)$ time and $O(N \alpha)$ memory. If array is replaced with map $O(N \log \alpha)$ time and $O(N)$ memory.
  * Status: Tested
  */
 constexpr short alpha = 26;
