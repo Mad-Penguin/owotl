@@ -4,7 +4,7 @@
  * License: ???
  * Description: Computes eertree for a given string. Letters have to be added one by one from left to right. After adding all the letters maybe call computeFrequency().
  * Usage: 
- * Let $s$ be the original string ans $p$ be the palindrome associated with node $u$
+ * Let $s$ be the original string and $p$ be the palindrome associated with node $u$
  * et[$u$].l is the length of $p$
  * et[$u$].cnt is the number of times $p$ appears as the longest palindrome suffix of a prefix $s[0:i]$. After calling computeFrequency() is the number of times $p$ appears in $s$.
  * et[$u$].link is the node corresponding to the longest proper palindrome of $p$
