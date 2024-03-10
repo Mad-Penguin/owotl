@@ -6,7 +6,7 @@
  * Usage: 
  * Let $s$ be the original string and $p$ be the palindrome associated with node $u$
  * et[$u$].l is the length of $p$
- * et[$u$].cnt is the number of times $p$ appears as the longest palindrome suffix of a prefix $s[0:i]$. After calling computeFrequency() is the number of times $p$ appears in $s$.
+ * et[$u$].cnt is the number of times $p$ appears as the longest palindrome suffix (not necessarily proper) of a prefix $s[0:i]$. After calling computeFrequency() is the number of times $p$ appears in $s$.
  * et[$u$].link is the node corresponding to the longest proper palindrome of $p$
  * Time: $O(N)$ time and $O(N \alpha)$ memory. If array is replaced with map $O(N \log \alpha)$ time and $O(N)$ memory.
  * Status: Tested
