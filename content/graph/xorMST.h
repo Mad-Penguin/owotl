@@ -2,7 +2,7 @@
  * Author: Jose Soto
  * Date: 2024-12-03
  * License: ???
- * Description: 1-indexed (a and T). Given an array $a$ of $n$ integers computes a spanning tree of the complete graph where the weight between two different nodes $1 \leq i, j \leq n$ is $a_i \oplus a_j$. xor\_sum stores the weight of the MST. T is the tree.
+ * Description: If problem requires long long make a custom case, is not tested for $LOG > 30$. 1-indexed (a and T). Given an array $a$ of $n$ integers computes a spanning tree of the complete graph where the weight between two different nodes $1 \leq i, j \leq n$ is $a_i \oplus a_j$. xor\_sum stores the weight of the MST. T is the tree.
  * Time: $O(N \log^2 N)$
  * Status: Tested
  */
