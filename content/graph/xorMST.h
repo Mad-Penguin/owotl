@@ -54,7 +54,7 @@ struct XORMST{
         for(int i=L1; i<=R1; i++) add(a[i].fi, i);
 
         int j;
-        int min_xor = -1;
+        dtype min_xor = -1;
 
         for(int i=L2; i<=R2; i++){
             j = qry(a[i].fi);
