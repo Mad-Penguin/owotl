@@ -2,7 +2,7 @@
  * Author: Diego Garcia
  * Date: 2024-13-03
  * License: ???
- * Description: Computes de basis for a set of elements in [0, 2^D).
+ * Description: Computes de basis for a set of elements in $[0, 2^D)$.
 Every element in the basis has a different most significant bit.
 The element with i-th bit on is saved on basis[i] (if it exists).
  * Time: $O(D)$

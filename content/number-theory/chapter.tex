@@ -70,18 +70,18 @@
 Coprime pairs:
 
  \begin{align*}
-        \sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j) = 1] = \sum_{i = 1}^n \sum_{j=1}^n \sum_{d|gcd(i,j)} \mu(d)
-        = \sum_{i=1}^n \sum_{j=1}^n \sum_{d=1}^n [d|i][d|j] \mu(d)\\
-        = \sum_{d=1}^n \mu(d) (\sum_{j=1}^n [d|j])^2
-        = \sum_{d=1}^n \mu(d)\lfloor{\frac{n}{d}}\rfloor^2.
-    \end{align*}
+        \sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j) = 1] &= \sum_{i = 1}^n \sum_{j=1}^n \sum_{d|gcd(i,j)} \mu(d) \\
+        &= \sum_{i=1}^n \sum_{j=1}^n \sum_{d=1}^n [d|i][d|j] \mu(d)\\
+        &= \sum_{d=1}^n \mu(d) (\sum_{j=1}^n [d|j])^2\\
+        &= \sum_{d=1}^n \mu(d)\lfloor{\frac{n}{d}}\rfloor^2.
+\end{align*}
 
 Gcd sum:
 
 \begin{align*}
-        \sum_{k=1}^n k \sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j)=k] = \sum_{k=1}^n k \sum_{a=1}^{\lfloor n/k\rfloor}\sum_{b=1}^{\lfloor n/k \rfloor} [\gcd(a, b) = 1]
-        = \sum_{k=1}^n k \sum_{d=1}^{\lfloor n/k \rfloor} \mu(d) \lfloor \frac{n}{kd}\rfloor^2 .
-    \end{align*}
+        \sum_{k=1}^n k \sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j)=k] &= \sum_{k=1}^n k \sum_{a=1}^{\lfloor n/k\rfloor}\sum_{b=1}^{\lfloor n/k \rfloor} [\gcd(a, b) = 1] \\
+        &= \sum_{k=1}^n k \sum_{d=1}^{\lfloor n/k \rfloor} \mu(d) \lfloor \frac{n}{kd}\rfloor^2 .
+\end{align*}
 doing $k = ld$ we get
  \[\sum_{l=1}^n \lfloor{\frac{n}{l}\rfloor}^2 \sum_{k|l} k \mu(\frac{k}{l}) = \sum_{l=1}^n \lfloor{\frac{n}{l}\rfloor}^2 \phi(l).\]
  
