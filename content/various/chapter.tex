@@ -1,5 +1,16 @@
 \chapter{Various}
 
+\section{Bitset}
+
+\begin{itemize}
+    \item \_Find\_first() regresa el indice del primer bit encendido. \textbf{Manejar explícitamente cuando no existe}
+    \item \_Find\_next(idx) regresa el menor indice mayor a idx con el bit encendido. \textbf{Manejar explícitamente cuando no existe}
+    \item count() Regresa la cantidad de 1's
+    \item set() Asigna todos los bits a 1
+    \item reset() Asigna todos los bits a 0
+    \item flip()
+\end{itemize}
+
 \section{Intervals}
 	%\kactlimport{IntervalContainer.h}
 	\kactlimport{IntervalCover.h}
@@ -45,7 +56,7 @@
 	% \kactlimport{Unrolling.h}
 	% \kactlimport{SIMD.h}
 	
-\section{Techniques}
+\section{Theory}
 \subsection{Problemas de Flujo}
 
 \ul{\textbf{Mínimo corte:}} El valor del mínimo corte es igual al del máximo flujo. Corriendo máximo flujo recupera un mínimo corte como el conjunto de los nodos alcanzables desde $s$ en la red residual, y su complemento.
@@ -81,4 +92,31 @@ Hacer un grafo bipartito como el del punto anterior y correr matching, si los ca
         \item \textbf{Max. Indep. Set}: Tomar los nodos no tomados en el Máx. Vertex Cover.
 \item \textbf{Max Clique:} Construir la red del complemento de $G$ y tomar Max. Indep. Set.
     \item \textbf{Min. Edge Cover:} Aristas del matching, más para los nodos no tomados en el matching, tomar cualquier arista.
+\end{itemize}
+
+\subsection{Strings}
+
+\begin{itemize}
+    \item Una strings $S$ tiene a lo más $N$ palíndromos distintos 
+    \item En una string aleatoria $S$ la cantidad esperada de palíndromos distintos es $O(\sqrt{N \sigma})$
+    \item Sea $S$ una string de longitud $N$ y $T$ una string de longitud minima tal que $S = T + T + \dots + T$. Si consideramos $k = N - \pi[N]$ --donde $\pi[N]$ se obtiene con KMP-- tenemos lo siguiente, si $k$ divide a $N$ se cumple que $T = S[1: k]$ si no necesariamente $T = S$.
+    \item Pensar el suffix tree como un Aho Corasick comprimido de todos los sufijos de una string y creer en la template
+\end{itemize}
+
+\ul{\textbf{Suffix Automaton}}
+
+\begin{itemize}
+    \item  Es un DAG
+    \item Los caminos del nodo inicial a uno terminal corresponden a sufijos
+    \item Cada nodo representa una clase de equivalencia que contiene las strings que tienen el mismo conjunto \textbf{endpos} (el conjunto de posiciones donde terminan). Para el nodo $u$, su conjunto \textbf{endpos} contiene strings de longitudes consecutivas siendo $u.len$ la mas grande y $u.link.len + 1$ la mas corta. Lo anterior se puede pensar como que el link lleva al siguiente conjunto de strings mas cortas consecutivas, además, existe un camino del nodo inicial a $u$ para toda longitud en $[u.link.len + 1, u.len]$. 
+    \item Los suffix links inducen un árbol 
+    \item El orden topologico se debe obtener como en un DAG general
+\end{itemize}
+
+\ul{\textbf{Eertree}}
+
+\begin{itemize}
+    \item Recorrer de $N$ a $2$ da un orden topologico, tener cuidado con los nodos $0$ y $1$ porque son strings vacias
+    \item Los nodos de strings de longitud par inducen un arbol con los links, tambien los impares
+    \item Podemos pensarlo como un DAG donde $u \to v$ si $v$ se obtiene como $c + u + c$ para algun caracter $c$; $aba \to cabac$. 
 \end{itemize}
