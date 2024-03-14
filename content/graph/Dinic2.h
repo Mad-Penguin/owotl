@@ -4,7 +4,7 @@
  * License: ???
  * Source: many places :p
  * Description: Flow algorithm with complexity $O(VE\log U)$ where $U = \max |\text{cap}|$
- if using potentials, else O(V^2 E).
+ if using potentials, else $O(V^2 E)$.
     Other complexities:
  * $O(\min(E^{1/2}, V^{2/3})E)$ if $U = 1$; $O(\sqrt{V}E)$ for bipartite matching.
  * Status: Tested
