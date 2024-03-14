@@ -81,9 +81,10 @@ Si $C$ es un vertex cover de cardinalidad máxima en este bipartito (veáse Koni
 Hacer un grafo bipartito como el del punto anterior y correr matching, si los caminos son disjuntos en vértices. Si son disjuntos en aristas, hacer la cerradura transitiva (es un poset) antes de calcular el matching.
 
    
-\ul{\textbf{Teorema de Mirsky}}: Dual de Dilworth. La cardinalidad máxima de una cadena es igual al mínimo número de anticadenas para cubrir a un poset.
+\ul{\textbf{Teorema de Mirsky}}: Dual de Dilworth. La cardinalidad máxima de una cadena es igual al mínimo número de anticadenas para cubrir a un poset.\linebreak\linebreak\linebreak
 
 \subsubsection{Grafos bipartitos}
+
 \ul{\textbf{Konig's theorem}}: En un grafo bipartito la cardinalidad del maximum matching es igual a la cardinalidad del minimum vertex cover (conjunto de vertices que incluye al menos un extremo de cada arista).
 \begin{itemize}
     \item \textbf{Construcción con flujo}: Sean $A, B$ las dos partes. Para $a \in A$, agregar $c(s\to a) = 1$, para $b \in B$, $c(b\to t) = 1$.
