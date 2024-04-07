@@ -13,7 +13,6 @@
  */
 constexpr short alpha = 26;
 constexpr char offset = 'a';
-
 struct state{
     int l, link, cnt;
     array<int,alpha> go;
@@ -22,24 +21,20 @@ struct state{
         go.fill(0);
     }
 };
-
 struct eertree{
     int n = 2;
     int last = 1;
     vector<state> et;
     string s;
-
     eertree(){
         et.resize(2);
         et[0].link = et[1].link = 1;
         et[1].l = -1;
     }
-
     int palSuff(int x){
         while(s[sz(s) - 2 - et[x].l] != s.back()) x = et[x].link;
         return x;
     }
-
     int add(char ch){
         s.pb(ch);
         last = palSuff(last);
@@ -57,7 +52,6 @@ struct eertree{
         if(et[last].l == sz(s)) last = et[last].link;
         return new_pal;
     }
-
     void computeFrequency(){
         for(int i=n-1; i>1; i--)
             et[ et[i].link ].cnt += et[i].cnt;

@@ -9,20 +9,11 @@
 struct DSU{
     int n, comp;
     vi dsu;
-
-    DSU(int n){
-        this->n = n;
-        dsu.resize(n+1);
-        for(int i=0; i<=n; i++) dsu[i] = i;
-        comp = n;
-        return;
-    }
-
+    DSU(int n) : n(n), dsu(n + 1), comp(n) { iota(all(dsu), 0); }
     int getF(int u){
         if(dsu[u] == u) return u;
         return dsu[u] = getF( dsu[u] );
     }
-
     bool join(int u, int v){
         int Fu = getF(u), Fv = getF(v);
         if(Fu == Fv) return false;
@@ -31,16 +22,12 @@ struct DSU{
         return true;
     }
 };
-
-
 struct ReachabilityTree{
-public:
     int n, idx, root;
     DSU dsu = DSU(0);
     vvi T, p;
     vi parent, depth, sz_subtree, sz_leaves, w;
     vector< array<int, 3> > edges;
-
     ReachabilityTree(int n, vector< array<int, 3> > edges){
         this->n = n;
         this->idx = n+1;
@@ -57,36 +44,27 @@ public:
         __build();
         __dfs(root, 0);
     }
-
-private:
     void __build(){
         int u, v;
         for(auto e:edges){
             u = dsu.getF(e[0]);
             v = dsu.getF(e[1]);
-
             if(u != v){
                 T[idx].pb(u);
                 T[idx].pb(v);
-
                 parent[u] = idx;
                 parent[v] = idx;
-
                 // Warning: Join debe asignar como nuevo representante a idx
                 dsu.join(u, idx);
                 dsu.join(v, idx);
-
                 w[idx] = e[2];
-
                 if(dsu.comp == 1) root = idx;
                 idx++;
-
                 continue;
             }
         }
         return;
     }
-
     void __dfs(int u, int d){
         depth[u] = d;
         sz_subtree[u] = 1;
