@@ -9,7 +9,7 @@
 struct DSU{
     int n, comp;
     vi dsu;
-    DSU(int n) : n(n), dsu(n + 1), comp(n) { iota(all(dsu), 0); }
+    DSU(int n) : n(n), dsu(n + 1), comp(n){iota(all(dsu), 0);}
     int getF(int u){
         if(dsu[u] == u) return u;
         return dsu[u] = getF( dsu[u] );
