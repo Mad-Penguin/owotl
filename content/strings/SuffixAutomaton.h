@@ -13,7 +13,6 @@
  */
 constexpr short alpha = 26;
 constexpr char offset = 'a';
-
 struct state{
     int len, link;
     bool is_terminal;
@@ -27,9 +26,7 @@ struct SuffixAutomaton{
     int n;
     vector<state> sa;
     int sz = 1, last = 0;
-
     SuffixAutomaton(int n) : n(n), sa(2*n + 1){}
-
     void add(char ch_){
         short ch = ch_-offset;
         int curr = sz++;
